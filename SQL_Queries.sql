@@ -1,3 +1,4 @@
+-- BASIC QUERIES : 
 -- 1. Explore the books dataset
    SELECT * FROM books;
 
@@ -54,3 +55,11 @@
 -- 15. Count the total number of books
    SELECT COUNT(*) AS Total_books
    FROM books;
+
+-- ADVANCED QUERIES : 
+-- 16. Total number of books sold for each genre
+   SELECT b.genre,SUM(o.quantity) AS total_books_sold
+   FROM orders o
+   JOIN books b
+   ON o.book_id = b.book_id
+   GROUP BY b.genre;
