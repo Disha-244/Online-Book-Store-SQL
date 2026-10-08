@@ -63,3 +63,11 @@
    JOIN books b
    ON o.book_id = b.book_id
    GROUP BY b.genre;
+-- 17. List customers who have placed atleast 2 orders
+   SELECT o.customer_id,c.name,COUNT(o.order_id) AS order_count
+   FROM orders o
+   JOIN customers c
+   ON o.customer_id = c.customer_id
+   GROUP BY o.customer_id,c.name
+   HAVING COUNT(order_id)>=2;
+
