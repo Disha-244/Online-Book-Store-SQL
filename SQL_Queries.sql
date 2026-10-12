@@ -46,7 +46,7 @@
 
 -- 13. Find the book with lowest stock
    SELECT * FROM books
-   ORDER BY stock ASC;
+   ORDER BY stock ASC LIMIT 1;
 
 -- 14. Calculate the total revenue generated from all orders
    SELECT SUM(total_amount) AS Revenue 
